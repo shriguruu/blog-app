@@ -1,0 +1,69 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <header class="bg-light text-center py-5 mb-4">
+        <div class="container">
+            <h1 class="fw-light text-dark">{{blog_title}}</h1>
+            <p class="lead text-muted">A simple blog layout using Bootstrap to share thoughts and ideas.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {% if posts %}
+                    {% for post in posts %}
+                    <div class="card mb-4">
+                        <img style="height:300; width:300;" src="{{post.img_url}}" class="card-img-top" alt="Blog Post Image">
+                        <div class="card-body">
+                            <h2 class="card-title">{{post.title}}</h2>
+                            <p class="card-text text-muted">Posted on {{post.created_at | date:"F j, Y"}} by <a href="#">{{post.created_by}}</a></p>
+                            <p class="card-text">{{post.content | truncatechars:50}}</p>
+                            <a href="{% url 'blog:detail' slug=post.slug %}" class="btn btn-primary">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No posts available.</p>
+                {% endif %}
+
+
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">&larr; Older</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Newer &rarr;</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="col-md-4">
+                
+                
+
+                <div class="card my-4">
+                    <h5 class="card-header">Categories</h5>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Smart Phones</a></li>
+                            <li><a href="#">Laptops</a></li>
+                            <li><a href="#">PC</a></li>
+                            <li><a href="#">Gaming</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card my-4">
+                    <h5 class="card-header">Follow Us</h5>
+                    <div class="card-body">
+                        <a href="#" class="btn btn-primary me-2"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="btn btn-primary me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn btn-danger me-2"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-secondary"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    
