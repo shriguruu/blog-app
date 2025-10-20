@@ -8,19 +8,18 @@
             <article>
                 <h1 class="mb-3">{{post.title}}</h1>
                 
-                <p class="lead">
-                    by <a href="#">{{post.created_by}}</a>
-                </p>
-                <hr>
-                <p class="text-muted">Posted on {{post.created_at | date:"F j, Y"}}</p>
+                <div class="text-muted mb-2">
+                    Posted on {{ post.created_at | date:"F j, Y" }} 
+                    by <a href="#">{{ post.created_by }}</a> 
+                    &middot; 
+                    Category: <a href="#">{{ post.category }}</a>
+                </div>
                 <hr>
 
                 <img src="{{post.img_url}}" class="img-fluid rounded mb-4" alt="Featured Image">
                 
                 <section class="post-body">
                     <p class="fs-5">{{post.content}}</p>
-                    
-                    
                 </section>
             </article>
 
@@ -60,7 +59,25 @@
             </div>
         </div>
 
-    </div>
+        <div class="col-md-4">
+            
+            {% if related_posts %}
+            <div class="card">
+                <h5 class="card-header">Related Posts</h5>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        {% for related_post in related_posts %}
+                        <li class="list-group-item">
+                            <a href="{% url 'blog:detail' slug=related_post.slug %}">{{ related_post.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+
+            </div>
+        </div>
 </div>
 
 {% endblock %}

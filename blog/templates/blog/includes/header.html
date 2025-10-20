@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/blog/">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'blog:index' %}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
@@ -16,7 +16,7 @@
                     <a class="nav-link" href="#">Archives</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{% url 'blog:contact' %}">Contact</a>
                 </li>
             </ul>
         </div>

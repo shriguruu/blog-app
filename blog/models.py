@@ -3,13 +3,21 @@ from django.utils.text import slugify
 
 # Create your models here.
 
+class Category(models.Model):
+
+    name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     img_url = models.URLField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     created_by = models.CharField(max_length=50, default='Admin')
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, max_length=255)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
         # REFINEMENT: Only generate slug if it doesn't exist
@@ -27,3 +35,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+    
