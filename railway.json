@@ -5,6 +5,7 @@
     "nixpacksConfig": {
       "aptPkgs": [
         "libmariadb3",
+        "libmariadb-dev",
         "pkg-config"
       ]
     }
