@@ -1,19 +1,41 @@
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
 # Django
 *.log
-*.pot
-*.pyc
-__pycache__/
 local_settings.py
 db.sqlite3
-media/
-static/
+db.sqlite3-journal
+/staticfiles/
+/media/
 
-# Environment
+# Environment variables
 .env
-env/
-venv/
-.venv/
+.env.local
 
-# IDE files
-.idea/
+# IDEs
 .vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
