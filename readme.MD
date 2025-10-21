@@ -113,11 +113,11 @@ Visit `http://127.0.0.1:8000/` in your browser to view the application.
 project-name/
 │
 ├── blog/                  # Main blog application
-├── myapp/          # Project settings
+├── myapp/                 # Project settings
 ├── templates/             # HTML templates
 ├── manage.py              # Django management script
 ├── requirements.txt       # Project dependencies
-└── README.md             # Project documentation
+└── README.md              # Project documentation
 ```
 
 ## Technologies Used
