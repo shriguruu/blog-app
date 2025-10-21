@@ -67,6 +67,6 @@ def contact_view(request):
     return render(request, "blog/contact.html")
 
 def about_view(request):
-
-    about_content = AboutUs.objects.first().content
-    return render(request, "blog/about.html", {'about_content':about_content})
+    about = AboutUs.objects.first()
+    about_content = about.content if about else "About page content coming soon..."
+    return render(request, "blog/about.html", {'about_content': about_content})
