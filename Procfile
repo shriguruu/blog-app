@@ -1,1 +1,1 @@
-web: gunicorn myapp.wsgi --log-file -
+web: printenv && gunicorn myapp.wsgi --log-file -
