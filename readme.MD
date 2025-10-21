@@ -68,12 +68,12 @@ In your `settings.py`, configure the database connection:
 ```python
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'blog_db',
         'USER': 'blog_user',
         'PASSWORD': 'your_password',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '5432',
     }
 }
 ```
@@ -123,7 +123,7 @@ project-name/
 ## Technologies Used
 
 - **Django**: Web framework
-- **MySQL**: Database
+- **PostgreSQL**: Database
 - **Python**: Programming language
 - **HTML/Bootstrap**: Frontend
 
