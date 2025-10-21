@@ -9,4 +9,5 @@ urlpatterns = [
     path("old-url/", views.old_url_redirect, name="old-url"),
     path("diff-new-url/", views.new_url_view, name="new-url"),
     path("contact", views.contact_view, name="contact"),
+    path("about", views.about_view, name="about"),
 ]
